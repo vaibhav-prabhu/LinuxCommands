@@ -4,6 +4,10 @@
 ```
 apt-key adv --keyserver hkps://keyserver.ubuntu.com --refresh-keys
 ```
+### OR
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <KEY>
+```
 
 ## CHECK the Memory of the datbases
 ```
