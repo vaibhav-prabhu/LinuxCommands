@@ -14,3 +14,8 @@ SELECT table_schema "Data Base Name", sum( data_length + index_length ) / 1024 /
 ```
 https://crontab.guru/
 ```
+## Linux Window
+
+```
+dbus-run-session -- gnome-shell --nested --wayland
+```
