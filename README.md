@@ -23,3 +23,17 @@ https://crontab.guru/
 ```
 dbus-run-session -- gnome-shell --nested --wayland
 ```
+
+## NGINX SITE AUTHENTICATION
+
+```
+sudo sh -c "echo -n 'sammy:' >> /etc/nginx/.htpasswd"
+
+sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
+
+### Add in Root Location Level
+
+        auth_basic "Restricted Content";
+        auth_basic_user_file /etc/nginx/.htpasswd; 
+
+```
