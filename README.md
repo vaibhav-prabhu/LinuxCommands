@@ -24,8 +24,7 @@ https://crontab.guru/
 dbus-run-session -- gnome-shell --nested --wayland
 ```
 
-## NGINX SITE AUTHENTICATION
-
+## Nginx Site Authenticateion
 ```
 sudo sh -c "echo -n 'sammy:' >> /etc/nginx/.htpasswd"
 
@@ -35,5 +34,14 @@ sudo sh -c "openssl passwd -apr1 >> /etc/nginx/.htpasswd"
 
         auth_basic "Restricted Content";
         auth_basic_user_file /etc/nginx/.htpasswd; 
+
+```
+
+## Convert RSA Key to PEM format
+```
+ssh-keygen -p -m PEM -f /path/to/id_rsa
+
+openssl rsa -in id_rsa -outform PEM -out id_rsa.pem
+
 
 ```
