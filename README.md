@@ -45,3 +45,13 @@ openssl rsa -in id_rsa -outform PEM -out id_rsa.pem
 
 
 ```
+
+## Create Certificate Using Certibot
+```
+sudo apt-get update
+
+sudo apt-get install certbot python3-certbot-nginx
+
+sudo certbot --nginx -d your_domain.com
+
+```
