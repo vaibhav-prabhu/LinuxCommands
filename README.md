@@ -56,3 +56,9 @@ sudo certbot --nginx -d your_domain.com
 
 sudo certbot certonly --webroot -w /path/to/your/nginx/html -d your_domain.com
 ```
+
+## Make the user not required to enter password when using sudo
+```
+yourusername ALL=(ALL:ALL) NOPASSWD: ALL
+```
+
