@@ -62,3 +62,18 @@ sudo certbot certonly --webroot -w /path/to/your/nginx/html -d your_domain.com
 yourusername ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
+## Forgot MYSQL root Passowrd
+```
+Add the Following the mysqld.cnf file
+
+skip-grant-tables
+
+Restart mysql service
+
+mysql -u root
+
+FLUSH PRIVILEGES;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+```
