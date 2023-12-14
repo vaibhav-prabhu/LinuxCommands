@@ -77,3 +77,18 @@ FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
 ```
+
+## Alter EBS Volume in EC2 (Execute the Below as a root user Else use sudo)
+```
+lsblk
+
+growpart {BLOCK} {PARTITION}
+eg:- growpart /dev/xvda 1
+
+For xfs file system
+        xfs_growfs -d {FILESYSTEM}
+
+For Ext4 file system
+        resize2fs {FILESYSTEM}
+
+```
