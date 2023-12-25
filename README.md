@@ -92,3 +92,28 @@ For Ext4 file system
         resize2fs {FILESYSTEM}
 
 ```
+
+## Attach EBS to EC2 as a Swap file
+
+```
+Check for new volume
+
+lsblk
+
+Set up the swap area
+
+sudo mkswap {Block}
+example: - sudo mkswap /dev/xvda
+
+Enable swap
+sudo swapon {Block}
+example:- sudo swapon /dev/xvda
+
+Make this swap setting persist by adding following line in /etc/fstab
+sudo nano /etc/fstab
+Content:- {Block} none swap sw 0 0
+example:- /dev/xvdf none swap sw 0 0
+
+Check swap space
+sudo swapon --show
+```
