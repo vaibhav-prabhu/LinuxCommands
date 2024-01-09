@@ -117,3 +117,11 @@ example:- /dev/xvdf none swap sw 0 0
 Check swap space
 sudo swapon --show
 ```
+
+## Resolve the Corrupt ZSH history file
+```
+cd ~
+mv .zsh_history .zsh_history_old
+strings .zsh_history_old > .zsh_history
+fc -R .zsh_history
+```
