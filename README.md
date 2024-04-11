@@ -125,3 +125,8 @@ mv .zsh_history .zsh_history_old
 strings .zsh_history_old > .zsh_history
 fc -R .zsh_history
 ```
+
+## Making Git Log output look good
+```
+git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
+```
