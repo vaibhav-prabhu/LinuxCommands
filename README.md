@@ -130,3 +130,8 @@ fc -R .zsh_history
 ```
 git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
 ```
+
+## MYSQL Kill all Sleep Queries If Large number of sleep queries are piling up
+```
+for i in `mysql -u <username> -p<password> <database>  -e "show processlist" | awk '/Sleep/ {print $1}'` ; do mysql -u <username> -p<password> <database>  -e "KILL $i;"; done
+```
