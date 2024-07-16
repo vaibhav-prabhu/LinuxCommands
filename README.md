@@ -135,3 +135,11 @@ git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%
 ```
 for i in `mysql -u <username> -p<password> <database>  -e "show processlist" | awk '/Sleep/ {print $1}'` ; do mysql -u <username> -p<password> <database>  -e "KILL $i;"; done
 ```
+
+## Change SSL TLS Ciphers for nginx configuration
+```
+Nginx Docs for SSL ciphers: - https://nginx.org/en/docs/http/ngx_http_ssl_module.html
+
+SSL Ciphers Naming:- https://www.openssl.org/docs/man1.1.1/man1/ciphers.html
+
+```
