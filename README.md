@@ -143,3 +143,17 @@ Nginx Docs for SSL ciphers: - https://nginx.org/en/docs/http/ngx_http_ssl_module
 SSL Ciphers Naming:- https://www.openssl.org/docs/man1.1.1/man1/ciphers.html
 
 ```
+
+## Nginx Logs Format
+
+```
+log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                    '$status $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
+
+log_format cloudflare '$http_cf_connecting_ip - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
+```
