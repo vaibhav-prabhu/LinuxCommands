@@ -55,6 +55,9 @@ sudo apt-get install certbot python3-certbot-nginx
 sudo certbot --nginx -d your_domain.com
 
 sudo certbot certonly --webroot -w /path/to/your/nginx/html -d your_domain.com
+
+sudo certbot certonly --standalone -d your_domain.com
+
 ```
 
 ## Make the user not required to enter password when using sudo
@@ -156,4 +159,14 @@ log_format cloudflare '$http_cf_connecting_ip - $remote_user [$time_local] "$req
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
 https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
+```
+
+
+## Create Swap Space from the Disk Storage
+```
+dd if=/dev/zero of=/swapfile bs=1M count=10240 status=progress
+chmod 600 swapfile
+mkswap /swapfile
+swapon /swapfile
+swapon
 ```
